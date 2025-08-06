@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login - Online Quiz</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Login to Start Quiz</h2>
+    <input type="text" id="username" placeholder="Enter your name" required>
+    <button onclick="login()">Start Quiz</button>
+  </div>
+
+  <script>
+    function login() {
+      const username = document.getElementById('username').value;
+      if (username.trim() !== "") {
+        localStorage.setItem("quizUsername", username);
+        window.location.href = "quiz.html";
+      } else {
+        alert("Please enter your name.");
+      }
+    }
+  </script>
+</body>
+</html>
